@@ -4,4 +4,12 @@ const idea_controller = require('../controllers/idea_controller')
 
 module.exports = (app) =>{
     app.get("/ideaApp/api/v1/ideas",idea_controller.geAllIdeas)
+
+    app.get("/ideaApp/api/v1/ideas/:id",idea_controller.getIdeaBasedOnId)
+
+    app.post("/ideaApp/api/v1/ideas",idea_controller.createIdea)
+
+    app.put("/ideaApp/api/v1/ideas/:id",idea_controller.updateIdea)
+
+    app.delete("/ideaApp/api/v1/ideas/:id",idea_controller.deleteIdea)
 }
